@@ -10,9 +10,4 @@ export class AppController {
   getData() {
     return this.appService.getData();
   }
-
-  @Post('addTodo')
-  addTodo() {
-    return this.appService.addTodo();
-  }
 }

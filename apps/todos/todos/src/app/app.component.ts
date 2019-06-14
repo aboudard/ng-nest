@@ -8,7 +8,7 @@ import { Todo } from '@myorg/data';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'todos-todos';
+  title = 'Nx NestJS Angular';
   todos: Todo[] = [];
 
   constructor(private http: HttpClient) {

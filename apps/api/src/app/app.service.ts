@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 
 @Injectable()
 export class AppService {
-  getData(): string {
-    return 'Hello NestJS backend';
+  getData(): { message: string } {
+    return { message: 'Hello NestJS backend' };
   }
 }

@@ -9,14 +9,16 @@ describe('AppController', () => {
   beforeAll(async () => {
     app = await Test.createTestingModule({
       controllers: [AppController],
-      providers: [AppService],
+      providers: [AppService]
     }).compile();
   });
 
   describe('getData', () => {
-    it('should return "Welcome to api!"', () => {
+    it('should return "Hello NestJS backend"', () => {
       const appController = app.get<AppController>(AppController);
-      expect(appController.getData()).toEqual({message: 'Welcome to api!'});
+      expect(appController.getData()).toEqual({
+        message: 'Hello NestJS backend'
+      });
     });
   });
 });
