@@ -18,6 +18,12 @@ export class TodoService {
         title: 'other todo',
         description: 'this is the sound of C',
         active: false
+      },
+      {
+        id: 3,
+        title: 'added todo',
+        description: 'Everybody loves kung fu fighting',
+        active: true
       }
     ];
   }

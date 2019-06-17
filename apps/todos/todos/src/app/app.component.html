@@ -1,18 +1,27 @@
 <div style="text-align:center">
   <h1>Welcome to {{ title }}!</h1>
   <img
-    width="450"
+    width="60"
     src="https://raw.githubusercontent.com/nrwl/nx/master/nx-logo.png"
   />
 </div>
+<h2>Counter value from Store : </h2>
+  <p>{{count$ | async}}</p>
+  <h2>Counter value from NgRx Data Store : </h2>
+  <p>{{counter$ | async}}</p>
 
 <p>This is an Angular app built with <a href="https://nx.dev">Nx</a>.</p>
 <p>🔎 **Nx is a set of Angular CLI power-ups for modern development.**</p>
 
 <h1>Todos</h1>
 <button id="add-todo" (click)="addTodo()">Add Todo</button>
-<ul>
+<ng-container *ngIf="(todos$ | async) as todos">
+  <ul>
+    <li *ngFor="let t of todos" class="todo">{{ t.title }}</li>
+  </ul>
+</ng-container>
+<!-- <ul>
   <li *ngFor="let t of todos" class="todo">{{ t.title }}</li>
-</ul>
+</ul> -->
 
 <router-outlet></router-outlet>
