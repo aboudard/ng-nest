@@ -1,4 +1,4 @@
-# Myorg
+# Angular and NestJs backend with NgRx Data
 
 This project was generated using [Nx](https://nx.dev).
 
