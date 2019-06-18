@@ -1,31 +1,12 @@
 import { Injectable } from '@nestjs/common';
-import { Todo } from '@myorg/data';
+import { Todo, mockTodos } from '@myorg/data';
 
 @Injectable()
 export class TodoService {
   private todos: Todo[] = [];
 
   constructor() {
-    this.todos = [
-      {
-        id: 1,
-        title: 'new todo',
-        description: 'another one bites the dust',
-        active: true
-      },
-      {
-        id: 2,
-        title: 'other todo',
-        description: 'this is the sound of C',
-        active: false
-      },
-      {
-        id: 3,
-        title: 'added todo',
-        description: 'Everybody loves kung fu fighting',
-        active: true
-      }
-    ];
+    this.todos = mockTodos;
   }
 
   create(todo: Todo) {
@@ -46,5 +27,16 @@ export class TodoService {
     this.todos = this.todos.filter(item => {
       return item.id != id;
     });
+  }
+
+  update(id: number, todo: Todo): Todo {
+    const tmpIndex = this.todos.findIndex(obj => obj.id == id);
+    const updatedObject = { ...this.todos[tmpIndex], ...todo };
+    this.todos = [
+      ...this.todos.slice(0, tmpIndex),
+      updatedObject,
+      ...this.todos.slice(tmpIndex + 1)
+    ];
+    return updatedObject;
   }
 }

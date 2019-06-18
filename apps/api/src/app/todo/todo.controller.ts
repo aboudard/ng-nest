@@ -34,16 +34,14 @@ export class TodoController {
     return todo;
   }
   @Put(':id')
-  async update(
-    @Param('id') id: number,
-    @Body() updateTodo: Todo
-  ): Promise<Todo> {
-    return {
+  update(@Param('id') id: number, @Body() updateTodo: Todo): Observable<Todo> {
+    return of(this.todoService.update(id, updateTodo));
+    /* return {
       id,
       title: `${updateTodo.title}, id: #${id} todo`,
       active: true,
       description: 'fake todo'
-    };
+    }; */
   }
 
   @Delete(':id')

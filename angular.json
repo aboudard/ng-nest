@@ -22,7 +22,10 @@
               "apps/todos/todos/src/favicon.ico",
               "apps/todos/todos/src/assets"
             ],
-            "styles": ["apps/todos/todos/src/styles.css"],
+            "styles": [
+              "apps/todos/todos/src/assets/vendor.scss",
+              "apps/todos/todos/src/assets/main.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -213,6 +216,9 @@
     "defaultCollection": "@nrwl/angular"
   },
   "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "scss"
+    },
     "@nrwl/angular:application": {
       "unitTestRunner": "jest",
       "e2eTestRunner": "cypress"

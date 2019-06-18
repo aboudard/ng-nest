@@ -1,8 +1,8 @@
 export class Todo {
-  readonly id: number;
-  readonly title: string;
-  readonly description: string;
-  readonly active: boolean;
+  id: number;
+  title: string;
+  description: string;
+  active: boolean;
 }
 export const mockTodos: Todo[] = [
   {
@@ -16,5 +16,11 @@ export const mockTodos: Todo[] = [
     title: 'other todo',
     description: 'this is the sound of C',
     active: false
+  },
+  {
+    id: 3,
+    title: 'added todo',
+    description: 'Everybody loves kung fu fighting',
+    active: true
   }
 ];
